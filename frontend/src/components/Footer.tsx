@@ -5,6 +5,7 @@ import ChatIcon from '@mui/icons-material/Chat';
 import ForumIcon from '@mui/icons-material/Forum';
 import CollectionsIcon from '@mui/icons-material/Collections';
 import { useNavigate } from 'react-router-dom';
+import '../styles/components/footer.css';
 
 const Footer: React.FC = () => {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <BottomNavigation onChange={handleChange}>
+    <BottomNavigation onChange={handleChange} className='page-footer'>
       <BottomNavigationAction label="Messages" value="/messages" icon={<ChatIcon />} />
       <BottomNavigationAction label="Threads" value="/threads" icon={<ForumIcon />} />
       <BottomNavigationAction label="NFT" value="/nft" icon={<CollectionsIcon />} />

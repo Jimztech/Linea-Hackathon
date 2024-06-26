@@ -2,7 +2,6 @@ import React from 'react';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
@@ -12,6 +11,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import { Link } from 'react-router-dom';
 import { IconButton } from '@mui/material';
+import Wallet from "./Wallet";
 
 
 type Anchor = 'top' | 'left' | 'bottom' | 'right';
@@ -52,10 +52,11 @@ const Sidebar: React.FC = () => {
             <ListItemIcon><AccountCircleIcon /></ListItemIcon>
             <ListItemText primary="Profile" />
           </ListItemButton>
-          <ListItem button component={Link} to="/wallet" onClick={toggleDrawer('left', false)}>
+          <ListItemButton component={Link} to="/wallet" onClick={toggleDrawer('left', false)}>
             <ListItemIcon><AccountBalanceWalletIcon /></ListItemIcon>
             <ListItemText primary="Wallet" />
-          </ListItem>
+            <Wallet />
+          </ListItemButton>
           <ListItemButton component={Link} to="/settings" onClick={toggleDrawer('left', false)}>
             <ListItemIcon><SettingsIcon /></ListItemIcon>
             <ListItemText primary="Settings" />
